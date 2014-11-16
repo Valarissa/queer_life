@@ -61,16 +61,16 @@ label start:
     m "Who is it?"
     
     menu:
-        "It's Mom":
+        "It's Mom.":
             $ p = Character('Mom', color="#ff007f")
             jump talk
         
-        "It's Dad":
+        "It's Dad.":
             $ p = Character('Dad', color="#3333ff")
             jump talk
 
         "It's your sibling.":
-            $ p = Character('Sibling-', color="#3333ff")
+            $ p = Character('Sibling', color="#3333ff")
             jump talk
          
     label talk:
@@ -90,7 +90,7 @@ label start:
     
     play music "music/Anguish.mp3" fadein 1.0
     
-    p "I’ve been concerned about a few things. You seem withdrawn, your grades have been slipping and I barely see you anymore."
+    p "I’ve been concerned about a few things. You seem withdrawn, your grades have been slipping, and I barely see you anymore."
     
     m "..."
     
@@ -123,7 +123,7 @@ label start:
     
     label e1_1c:
         
-    p "I get it I didn’t really feel like I could turn to my parents either when I was younger, but just know that I love you."
+    p "I get it. I didn’t really feel like I could turn to my parents either when I was younger, but just know that I love you."
     
     jump e1_1_done
             
