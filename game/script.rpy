@@ -398,7 +398,7 @@ label start:
         "... kind of.":
             jump e2_6
         "Piss off":
-            agression += 2
+            $ agression = 2
             jump e2_6
         "Yeah... it's been a long night":
             jump e2_6
