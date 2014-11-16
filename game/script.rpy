@@ -69,8 +69,8 @@ label start:
             $ p = Character('Dad', color="#3333ff")
             jump talk
 
-        "It's a hentai game.":
-            $ p = Character('Hentai Game-', color="#3333ff")
+        "It's your sibling.":
+            $ p = Character('Sibling-', color="#3333ff")
             jump talk
          
     label talk:
