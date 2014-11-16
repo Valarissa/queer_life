@@ -206,7 +206,7 @@ label start:
         m "Please don’t tell mom."
         $ family = "She"
     else:
-        m "Please don't tell our hentai parents"
+        m "Please don't tell our parents"
         $ family = "They"
         
     define child = 'child like this'
