@@ -2,3 +2,6 @@ game/bytecode*
 game/saves/*
 *.txt
 game/*.rpyc
+tmp/*
+.DS_Store
+**/.DS_Store
