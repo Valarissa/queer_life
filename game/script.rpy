@@ -46,7 +46,7 @@ label start:
 
     with Fade(0.75, 0.5, 1)
 
-    "Day 1, Night"
+    "{b}Day 1, Night{b}"
 
     play sound "sound/door_knock.mp3"
 
@@ -123,7 +123,11 @@ label start:
 
     label e1_1c:
 
-    p "I get it. I didn’t really feel like I could turn to my parents either when I was younger, but just know that I love you."
+    # NEED TO FIX: put conditional for sibling.
+    if p.name == 'Sibling':
+        p "I get it. I don’t really feel like I can turn to our parents either, but just know that I'm here for you."
+    else:
+        p "I get it. I didn’t really feel like I could turn to my parents either when I was younger, but just know that I love you."
 
     jump e1_1_done
 
@@ -269,7 +273,7 @@ label start:
 
     window show
 
-    "Day 2, 1 am"
+    "{b}Day 2, 1 am{b}"
 
     pause 1
 
