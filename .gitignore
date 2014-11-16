@@ -1,4 +1,4 @@
 game/bytecode*
 game/saves/*
-game/*.txt
+*.txt
 game/*.rpyc
