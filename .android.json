@@ -1,0 +1,1 @@
+{"layout": null, "name": "Queer Life", "package": "com.mdong.ql", "orientation": "landscape", "include_pil": false, "expansion": false, "source": false, "icon_name": "Queer Life", "version": "1.0.0", "target_version": 14, "permissions": ["VIBRATE"], "include_sqlite": false, "store": "play", "numeric_version": "10000"}
