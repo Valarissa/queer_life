@@ -20,6 +20,7 @@ image dad happy = "images/dad-h.png"
 image dad mad = "images/dad-m.png"
 image unknown = "images/unknown.png"
 image bg street = "images/outside.png"
+image bad man = "images/bad man.png"
 
 # Declare characters used by this game.
 define m = Character('Me', color="#c8ffc8")
@@ -300,17 +301,19 @@ label start:
 
     menu:
         "Find a bench to sleep on in the park":
-            jump e2_1
+            jump e2_1a
         "Call a friend":
-            jump e2_1
+            jump e2_1b
         "Look for the nearest homeless shelter":
-            jump e2_1
+            jump e2_1c
         "Call your older sibling who moved out":
-            jump e2_1
+            jump e2_1d
    
-    label e2_1:
-    
+    label e2_1a:
+
     n "walking through the park, you find a bench. It doesn’t exactly look comfortable, but the thought of dealing with other people seems a bit too much right now. Laying down, you unpack some clothes to cover yourself to keep out the chill. You close your eyes and drift asleep."
+    
+    show unknown
 
     n "A sharp pain in your rib jolts you awake and you see a silhouetted figure standing over you."
 
@@ -326,6 +329,32 @@ label start:
             jump e2_2
 
     label e2_2:
+
+    hide unknown
+    
+    show bad man
+
+    jump end_game
+
+    label e2_1b:
+
+    n "Your friend takes you in and you crash on their couch."
+
+    jump end_game
+
+    label e2_1c:
+
+    n "You are lucky to get the last bed available in the youth shelter."
+
+    jump end_game
+
+    label e2_1d:
+
+    n "Your sibling picks you up and drives you to their place"
+
+    jump end_game
+
+    label end_game:
 
     n "You have no idea what is going on."
 
