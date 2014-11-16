@@ -60,6 +60,7 @@ label start:
 
     m "Who is it?"
 
+    # Choice 1.0a
     menu:
         "It's Mom.":
             $ p = Character('Mom', color="#ff007f")
@@ -96,6 +97,7 @@ label start:
 
     p "You come home, then just lock yourself in your room until dinner’s ready. You don’t talk to us about your day. I’ve been worried."
 
+    # Choice 1.1
     menu:
         "I… I don’t really want to talk about it.":
             jump e1_1a
@@ -109,6 +111,7 @@ label start:
         "Leave me alone!":
             jump e1_1d
 
+    # Response 1.1
     label e1_1a:
 
     p "You can talk to me. You’re my child, I love you. Just, please don’t shut me out if you’re hurting."
@@ -123,7 +126,6 @@ label start:
 
     label e1_1c:
 
-    # NEED TO FIX: put conditional for sibling.
     if p.name == 'Sibling':
         p "I get it. I don’t really feel like I can turn to our parents either, but just know that I'm here for you."
     else:
@@ -147,6 +149,7 @@ label start:
 
     m "I... I... am..."
 
+    # Choice 1.2
     menu:
         "I am... gay":
             $ sexuality = 'gay'
@@ -165,6 +168,7 @@ label start:
     p "I… I’m not sure I understand."
 
     if sexuality == 'gay' or sexuality == 'bi':
+        # Choice 1.2a/c
         menu:
             "I like boys":
                 $ gender = 'm'
@@ -173,6 +177,7 @@ label start:
                 $ gender = 'f'
                 jump e1_3done
     elif sexuality == 'trans':
+        # Choice 1.2b
         menu:
             "I’m actually your daughter, not your son":
                 $ gender = 'f'
@@ -200,16 +205,19 @@ label start:
     $ family = 'They'
 
     if p.name == 'Mom':
+        # Dialogue 1.0a
         hide mom none
         show mom mad
         m "Please don’t tell dad."
         $ family = "He"
     elif p.name == 'Dad':
+        # Dialogue 1.0b
         hide dad none
         show dad mad
         m "Please don’t tell mom."
         $ family = "She"
     else:
+        # Dialogue 1.0c
         m "Please don't tell our parents"
         $ family = "They"
 
@@ -243,9 +251,6 @@ label start:
 
     $ end_ep1 = "This had been bothering me for a while, I felt trapped with this secret for so long already and now this? I didn’t exactly feel safe with how my " + p.name + " would react. So I left, not really sure where I would end up."
 
-    p "You've created a new Ren'Py game."
-
-    p "Once you add a story, pictures, and music, you can release it to the world!"
 
     "End of Episode 1"
 
@@ -292,5 +297,7 @@ label start:
     m "uh… I’m so tired… I just want to sleep, but where can I go?"
 
     pause 1
+
+    # Decision 2.0
 
     return
