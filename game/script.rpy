@@ -367,9 +367,120 @@ label start:
 
     pause 2
 
+    window hide
 
-    # Charpter 3
+    play sound "sound/new_ep.mp3" fadein 3.5
 
+    show splash e3
 
+    with Fade(2, 2, 2)
+
+    stop sound fadeout 4.5
+
+    pause 4
+
+    window show
+
+    $ ep3conv0 = "The car ride feels like an eternity, your " + p.name  + " barely looks at you the entire way. They occasionally sigh, and shake their head. The first words they say are as you pull up to your house"
+
+    n "[ep3conv0]"
+
+    if p.name == 'Mom':
+        $ other_parent = 'dad'
+
+    else:
+        $ other_parent = 'mom'
+
+    $ ep3conv1 =  "We are going to have a talk to your " + other_parent
+
+    p "[ep3conv1]"
+
+    p "We were worried sick about you. I mean, honestly, how could you think to run off like that? Did you think we wouldn’t worry?"
+
+    $ ep3conv2 = "You get out of the car, looking at the house you normally would call home. A sense of dread and trepidation washes over you as you take your first steps towards your confrontation with your " + other_parent
+
+    n "[ep3conv2]"
+
+    play sound "sound/door_open.mp3" fadein 1
+
+    $ ep3conv3 = "You open the door slowly, you hear chairs being pushed and hurried footsteps in adjacent room. Your " + other_parent + " rush forward and hug you tight, then hold your shoulders at arms length so they can stare at you."
+
+    n "[ep3conv3]"
+
+    if p.name == 'Mom':
+        show dad mad
+    else:
+        show mom mad
+
+    o "Oh thank god you’re alright. I was so worried about you!"
+
+    o "Why would you run off like that?! What were you so scared of?"
+
+    menu:
+        "I have something that I… That I was afraid to tell you.":
+            jump ep3_2
+        "Honestly? You.":
+            jump ep3_2
+        "I just… I didn’t feel comfortable.":
+            jump ep3_2
+        "...":
+            jump ep3_2
+
+    label ep3_2:
+
+    if p.name == 'Mom':
+        hide dad mad
+        show dad none
+    else:
+        hide mom mad
+        show mom none
+
+    $ ep3conv4 = "Is this what your " + p.name + " told me about?"
+
+    o "[ep3conv4]"
+
+    menu:
+        "... Yeah":
+            jump ep3_3
+        "I can't believe they told you when I told them not to": 
+            jump ep3_3
+        "Please don't be upset":
+            jump ep3_3
+        "...":
+            jump ep3_3
+
+    label ep3_3:
+
+    o "You know we love you. The only thing any parent should ever want is for their child to be happy. It’ll take some time to get used to, but we’ll try to do our best to support you."
+
+    if p.name == 'Mom':
+        #hide dad none
+        show dad happy at left
+    else:
+        #hide mom none
+        show mom happy at left
+
+    p "We always love you and we are always pround of you."
+
+    if p.name == 'Mom':
+        show mom happy at right
+    else:
+        show dad happy at right
+
+    menu:
+        "I ... I LOVE you too":
+            jump end
+        "Thank you... I was so worried how you'd act":
+            jump end
+        "Thanks for being so awesome about this":
+            jump end
+        "... * tear up * ...":
+            jump end
+
+    label end:
+
+    scene fadeout 2
+    
+    "Fin"
 
     return
