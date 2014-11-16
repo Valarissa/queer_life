@@ -225,7 +225,7 @@ label start:
         $ family = "She"
     else:
         # Dialogue 1.0c
-        m "Please don't tell our parents"
+        m "Please don't tell our parents."
         $ family = "They"
 
     define child = 'child like this'
@@ -236,7 +236,14 @@ label start:
     else:
         $ child = 'son'
 
-    $ conv = "Yeah... I’m not really sure how " + family.lower() + " would take this. " + family + " told me one time " + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
+    $ family_is = family.lower()
+
+    if p.name == 'Sibling':
+        $ family_is += " are"
+    else:
+        $ family_is += " is"
+
+    $ conv = "Yeah... I’m not really sure how " + family.lower() + " would take this. " + family + " told me one time " + family_is + " not sure if " + family.lower() + " would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
 
     p "[conv]"
 
