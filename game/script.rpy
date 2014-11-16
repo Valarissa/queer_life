@@ -26,6 +26,7 @@ image unknown = "images/unknown.png"
 image bg street = "images/outside.png"
 image bg outside = "images/house.png"
 image bg inside = "images/inside.png"
+image bg police = "images/police.png"
 image bg jail = "images/Jail.png"
 image bad man = "images/bad man.png"
 
@@ -446,6 +447,8 @@ label start:
     jump e3_0
 
     label e3_0:
+
+    scene bg police
 
     play sound "sound/tick.mp3" fadein 2
 
