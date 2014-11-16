@@ -343,9 +343,21 @@ label start:
     
     show bad man
 
-    b "You can't sleep here. I'm going to have to take you in."
+    n "The figure grabs you and hauls you bodily to your feet. In the new perspective, you can tell the person is a police officer."
 
-    jump e3_0
+    b "I said on your feet!"
+
+    jump e2_3
+
+    label e2_3:
+
+    menu:
+        "I’m sorry officer! I couldn’t tell your were a policeman":
+            jump e3_0
+        "Get off of me!":
+            jump e3_0
+        "What did I do?":
+            jump e3_0
 
     label e2_1b:
 
