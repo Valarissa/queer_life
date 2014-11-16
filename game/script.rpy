@@ -50,8 +50,8 @@ label start:
             $ p = Character('Dad', color="#3333ff")
             jump talk
 
-        "It's your sibling":
-            $ p = Character('Sibling', color="#3333ff")
+        "It's a hentai game.":
+            $ p = Character('Hentai Game-', color="#3333ff")
             jump talk
          
     label talk:
@@ -152,25 +152,25 @@ label start:
     label e1_3done:
     p ".. I.. I see..."
     
-    define family = 'They'
+    $ family = 'They'
     
     if p.name == 'Mom':
-        p "Please don’t tell dad."
-        $family = "He"
+        m "Please don’t tell dad."
+        $ family = "He"
     elif p.name == 'Dad':
-        p "Please don’t tell mom."
-        $family = "She"
+        m "Please don’t tell mom."
+        $ family = "She"
     else:
-        p "Please don't tell our hentai parents"
-        $family = "They"
+        m "Please don't tell our hentai parents"
+        $ family = "They"
         
-    define child = 'child like this'    
+    define child = 'child like this'
     if sexuality == 'gay':
-        $child = 'gay child'
+        $ child = 'gay child'
     elif gender == 'f':
-        $child = 'daughter'
+        $ child = 'daughter'
     else:
-        $child = 'son'
+        $ child = 'son'
     
     $ conv = "Yeah... I’m not really sure how your " + family.lower() + " would take this. " + family + " told me one time " + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
         
