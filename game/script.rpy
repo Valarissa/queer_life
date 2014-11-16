@@ -298,6 +298,35 @@ label start:
 
     pause 1
 
-    # Decision 2.0
+    menu:
+        "Find a bench to sleep on in the park":
+            jump e2_1
+        "Call a friend":
+            jump e2_1
+        "Look for the nearest homeless shelter":
+            jump e2_1
+        "Call your older sibling who moved out":
+            jump e2_1
+   
+    label e2_1:
+    
+    n "walking through the park, you find a bench. It doesn’t exactly look comfortable, but the thought of dealing with other people seems a bit too much right now. Laying down, you unpack some clothes to cover yourself to keep out the chill. You close your eyes and drift asleep."
+
+    n "A sharp pain in your rib jolts you awake and you see a silhouetted figure standing over you."
+
+    # Decision 2.1a.0
+    menu:
+        "What the hell?!":
+            jump e2_2
+        "(Stand up)":
+            jump e2_2
+        "Hrnnngh… go away":
+            jump e2_2
+        "What? What’s going on?":
+            jump e2_2
+
+    label e2_2:
+
+    n "You have no idea what is going on."
 
     return
