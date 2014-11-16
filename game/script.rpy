@@ -369,13 +369,28 @@ label start:
 
     if agression == 0:
         b "It’s alright, listen. Do you have any ID on you?"
-        jump e3_0
+        jump e2_5
     elif agression <= 2:
         b "Let me see your ID."
-        jump e3_0
+        jump e2_5
     else:
         b "I’m so sick of dealing with f*cking punks like you. Give me your ID, now."
-        jump e3_0
+        jump e2_5
+
+    label e2_5:
+
+    $ grabs = "takes"
+    $ mood = ""
+
+    if agression > 2:
+        $ grabs = "snatches"
+        $ mood = " angrily"
+
+    n "The officer [grabs] your ID, looking over it[mood]. He eyes you up and down."
+
+    b "You a runaway?"
+
+    jump e3_0
 
     label e2_1b:
 
