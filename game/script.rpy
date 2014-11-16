@@ -10,6 +10,7 @@ init python:
 # eg. image eileen happy = "eileen_happy.png"
 image splash e1 = "images/title1.png"
 image splash e2 = "images/title2.png"
+image splash e3 = "images/title3.png"
 image bg bedroom = "images/bedroom.png"
 image mom none = "images/mom-n.png"
 image mom happy = "images/mom-h.png"
@@ -26,6 +27,7 @@ image bad man = "images/bad man.png"
 define m = Character('Me', color="#c8ffc8")
 define p = Character('???', color="#000000")
 define n = Character('Narrative', color="#f0f0f0")
+define b = Character('Officer')
 define gender = 'x'
 define sexuality = 'x'
 
@@ -293,7 +295,7 @@ label start:
 
     n "The loneliness normally cuts so deep, but now? With nowhere to turn? It’s almost too much."
 
-    pause 2
+    pause 1
 
     m "uh… I’m so tired… I just want to sleep, but where can I go?"
 
@@ -334,28 +336,31 @@ label start:
     
     show bad man
 
-    jump end_game
+    b "You can't sleep here. I'm going to have to take you in."
+
+    jump e3_0
 
     label e2_1b:
 
     n "Your friend takes you in and you crash on their couch."
 
-    jump end_game
+    jump e3_0
 
     label e2_1c:
 
     n "You are lucky to get the last bed available in the youth shelter."
 
-    jump end_game
+    jump e3_0
 
     label e2_1d:
 
     n "Your sibling picks you up and drives you to their place"
 
-    jump end_game
+    jump e3_0
 
-    label end_game:
+    # Episode III
+    label e3_0:
 
-    n "You have no idea what is going on."
+    pause 2
 
     return
