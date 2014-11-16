@@ -395,9 +395,38 @@ label start:
 
     jump e3_0
 
-    # Episode III
     label e3_0:
 
+    n "You’re left in the room, your only companion the receptionist behind a plate of bulletproof glass. (** She still stares at you disapprovingly when she thinks you aren’t looking)"
+
+    n "A ticking clock provides a constant noise, punctuated by the clacking of the receptionists keyboard, occasional doors closing, and footsteps in distant hallways. The thought of the officer calling your parents is a grim reminder of how much more likely your parents are to blow up at you now."
+
+    play sound "sound/tick.mp3" fadein 2
+
+    n "Being queer is bad enough, but now you’re already getting in trouble with police because of it!” Their condemning voice(s) run through your mind in a downward spiral as someone comes into the room."
+
+    b "No answer. I tried calling a few times, but they never picked up. You can make one call for someone to potentially release you, they have to be an adult in order for us to release you to their custody"
+
+    stop sound fadeout 2
+
+    menu:
+        "Call no one. (Wait for parents)":
+            jump ep2_7
+        "Call older sibling":
+            jump ep2_7
+        "Call friend to see if their parent will help":
+            jump ep2_7
+        "Call relative":
+            jump ep2_7
+    label ep2_7:
+
+    m "..."
+
+    n "Eventually you drift off to sleep. You’re awoken by the click of the key in the lock and the sounds of the door being opened"
+
+    b "Your parent is here. They’ve filled out all the release forms. You’re free to go. Try to stay out of trouble. Next time, stay with a friend or something, just, don’t sleep in the park or on the street, it’s dangerous"
+
+    # Episode III
     stop music fadeout 3
 
     pause 2
