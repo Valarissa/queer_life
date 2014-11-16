@@ -1,7 +1,14 @@
 ﻿# You can place the script of your game in this file.
 
+init python:
+
+    # Use a widescreen resolution.
+    config.screen_width = 960
+    config.screen_height = 540
+
 # Declare images below this line, using the image statement.
 # eg. image eileen happy = "eileen_happy.png"
+image splash e1 = "images/title1.png"
 
 # Declare characters used by this game.
 define m = Character('Me', color="#c8ffc8")
@@ -9,11 +16,17 @@ define p = Character('???', color="#000000")
 define gender = 'x'
 define sexuality = 'x'
 
-
 # The game starts here.
 label start:
+    window hide
+    
+    scene splash e1
+    
+    pause(3)
     
     play sound "door_knock.mp3"
+    
+    window show dissolve
     
     m "Who is it?"
     
@@ -128,13 +141,33 @@ label start:
     label e1_3done:
     p ".. I.. I see..."
     
+    define family = 'They'
+    
     if p.name == 'Mom':
-        "Please don’t tell dad."
+        p "Please don’t tell dad."
+        $family = "He"
     elif p.name == 'Dad':
-        "Please don’t tell mom."
+        p "Please don’t tell mom."
+        $family = "She"
     else:
-        "Please don't tell our hentai parents"
+        p "Please don't tell our hentai parents"
+        $family = "They"
         
+    define child = 'child like this'    
+    if sexuality == 'gay':
+        $child = 'gay child'
+    elif gender == 'f':
+        $child = 'daughter'
+    else:
+        $child = 'son'
+    
+    #TODO fix me
+    define conv = "Yeah... I’m not really sure how " + family.lower() + "would take this." + family + "told me one time" + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
+        
+    p conv
+    
+    m "... This had been bothering me for a while, I felt trapped with this secret for so long already and now this? I didn’t exactly feel safe with how my (mom, dad, parents) would react. So I left, not really sure where I would end up."
+    
     p "You've created a new Ren'Py game."
 
     p "Once you add a story, pictures, and music, you can release it to the world!"
