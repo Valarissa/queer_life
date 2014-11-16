@@ -245,9 +245,7 @@ label start:
     else:
         $ family_is += " is"
 
-    $ conv = "Yeah... I’m not really sure how " + family.lower() + " would take this. " + family + " told me one time " + family_is + " not sure if " + family.lower() + " would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
-
-    p "[conv]"
+    p "Yeah... I’m not really sure how [family_is] would take this. [family] told me one time [family_is] not sure if [family_is] would be able to deal with having a [child]. I can’t just keep this to myself though, I’m sorry."
 
     p "We were proud of you. And now you are telling me this... I think I need a moment. (Sigh)"
 
@@ -255,7 +253,7 @@ label start:
 
     play sound "sound/door_close.mp3"
 
-    "[p.name] left.]"
+    "[p.name] left"
 
     pause 2
 
@@ -263,7 +261,7 @@ label start:
 
     pause 1
 
-    $ end_ep1 = "This had been bothering me for a while, I felt trapped with this secret for so long already and now this? I didn’t exactly feel safe with how my " + p.name + " would react. So I left, not really sure where I would end up."
+    n "This had been bothering me for a while, I felt trapped with this secret for so long already and now this? I didn’t exactly feel safe with how my [p.name] would react. So I left, not really sure where I would end up."
 
 
     "End of Episode 1"
@@ -300,9 +298,7 @@ label start:
 
     n "More so than it had been for years as you drew further and further into yourself. Holding in aspects of your identity, of your very self, was and continues to be painfully isolating."
 
-    $ e2nv = "Friends inferring things about your life, being " + sexuality + ". They felt so utterly awkward and alienating that they wrench you from the moments you want to be able to enjoy, even if just for a moment. "
-
-    n "[e2nv]"
+    n "Friends inferring things about your life, being [sexuality]. They felt so utterly awkward and alienating that they wrench you from the moments you want to be able to enjoy, even if just for a moment. "
 
     n "The loneliness normally cuts so deep, but now? With nowhere to turn? It’s almost too much."
 
@@ -396,9 +392,7 @@ label start:
 
     play music "music/newStart.mp3" fadein 3
 
-    $ ep3conv0 = "The car ride feels like an eternity, your " + p.name  + " barely looks at you the entire way. They occasionally sigh, and shake their head. The first words they say are as you pull up to your house"
-
-    n "[ep3conv0]"
+    n "The car ride feels like an eternity, your [p.name] barely looks at you the entire way. They occasionally sigh, and shake their head. The first words they say are as you pull up to your house"
 
     if p.name == 'Mom':
         $ other_parent = 'dad'
@@ -406,21 +400,15 @@ label start:
     else:
         $ other_parent = 'mom'
 
-    $ ep3conv1 =  "We are going to have a talk to your " + other_parent
-
-    p "[ep3conv1]"
+    p "We are going to have a talk to your [other_parent]"
 
     p "We were worried sick about you. I mean, honestly, how could you think to run off like that? Did you think we wouldn’t worry?"
 
-    $ ep3conv2 = "You get out of the car, looking at the house you normally would call home. A sense of dread and trepidation washes over you as you take your first steps towards your confrontation with your " + other_parent
-
-    n "[ep3conv2]"
+    n "You get out of the car, looking at the house you normally would call home. A sense of dread and trepidation washes over you as you take your first steps towards your confrontation with your [other_parent]"
 
     play sound "sound/door_open.mp3" fadein 1
 
-    $ ep3conv3 = "You open the door slowly, you hear chairs being pushed and hurried footsteps in adjacent room. Your " + other_parent + " rush forward and hug you tight, then hold your shoulders at arms length so they can stare at you."
-
-    n "[ep3conv3]"
+    n "You open the door slowly, you hear chairs being pushed and hurried footsteps in adjacent room. Your [other_parent] rush forward and hug you tight, then hold your shoulders at arms length so they can stare at you."
 
     scene bg inside
 
@@ -452,9 +440,7 @@ label start:
         hide mom mad
         show mom none
 
-    $ ep3conv4 = "Is this what your " + p.name + " told me about?"
-
-    o "[ep3conv4]"
+    o "Is this what your [p.name] told me about?"
 
     menu:
         "... Yeah":
