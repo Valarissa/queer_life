@@ -327,12 +327,16 @@ label start:
     n "A sharp pain in your rib jolts you awake and you see a silhouetted figure standing over you."
 
     # Decision 2.1a.0
+    $ agression = 0
+
     menu:
         "What the hell?!":
+            $ agression += 2
             jump e2_2
         "(Stand up)":
             jump e2_2
         "Hrnnngh… go away.":
+            $ agression += 1
             jump e2_2
         "What? What’s going on?":
             jump e2_2
@@ -353,11 +357,25 @@ label start:
 
     menu:
         "I’m sorry officer! I couldn’t tell your were a policeman":
-            jump e3_0
+            jump e2_4
         "Get off of me!":
-            jump e3_0
+            $ agression += 2
+            jump e2_4
         "What did I do?":
-            jump e3_0
+            $ agression += 1
+            jump e2_4
+
+    label e2_4:
+
+    if agression == 0:
+        b "It’s alright, listen. Do you have any ID on you?"
+        jump e3_0
+    elif agression <= 2:
+        b "Let me see your ID."
+        jump e3_0
+    else:
+        b "I’m so sick of dealing with f*cking punks like you. Give me your ID, now."
+        jump e3_0
 
     label e2_1b:
 
