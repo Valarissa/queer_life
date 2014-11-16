@@ -9,6 +9,13 @@ init python:
 # Declare images below this line, using the image statement.
 # eg. image eileen happy = "eileen_happy.png"
 image splash e1 = "images/title1.png"
+image mom none = "images/mom-n.png"
+image mom happy = "images/mom-h.png"
+image mom mad = "images/mom-m.png"
+image dad none = "images/dad-n.png"
+image dad happy = "images/dad-h.png"
+image dad mad = "images/dad-m.png"
+image unknown = "images/unknown.png"
 
 # Declare characters used by this game.
 define m = Character('Me', color="#c8ffc8")
@@ -20,9 +27,13 @@ define sexuality = 'x'
 label start:
     window hide
     
-    scene splash e1
+    show splash e1
     
     pause(3)
+    
+    hide splash e1
+    
+    show unknown
     
     play sound "door_knock.mp3"
     
@@ -161,8 +172,7 @@ label start:
     else:
         $child = 'son'
     
-    #TODO fix me
-    $ conv = "Yeah... I’m not really sure how " + family.lower() + "would take this." + family + "told me one time" + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
+    $ conv = "Yeah... I’m not really sure how your " + family.lower() + " would take this. " + family + " told me one time " + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
         
     p "[conv]"
     
