@@ -39,8 +39,8 @@ label start:
             $ p = Character('Dad', color="#3333ff")
             jump talk
 
-        "It's a hentai game.":
-            $ p = Character('Hentai Game-', color="#3333ff")
+        "It's your sibling":
+            $ p = Character('Sibling', color="#3333ff")
             jump talk
          
     label talk:
@@ -162,9 +162,9 @@ label start:
         $child = 'son'
     
     #TODO fix me
-    define conv = "Yeah... I’m not really sure how " + family.lower() + "would take this." + family + "told me one time" + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
+    $ conv = "Yeah... I’m not really sure how " + family.lower() + "would take this." + family + "told me one time" + family.lower() + " is not sure if they would be able to deal with having a " + child + ". I can’t just keep this to myself though, I’m sorry."
         
-    p conv
+    p "[conv]"
     
     m "... This had been bothering me for a while, I felt trapped with this secret for so long already and now this? I didn’t exactly feel safe with how my (mom, dad, parents) would react. So I left, not really sure where I would end up."
     
