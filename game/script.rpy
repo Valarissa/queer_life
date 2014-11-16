@@ -390,6 +390,37 @@ label start:
 
     b "You a runaway?"
 
+    menu:
+        "... kind of.":
+            jump e2_6
+        "Piss off":
+            agression += 2
+            jump e2_6
+        "Yeah... it's been a long night":
+            jump e2_6
+        "...":
+            jump e2_6
+
+    label e2_6:
+    
+    n "The officer shakes his head."
+    if agression <= 3:
+        jump e2_6a
+    else:
+        jump e2_6b
+
+    label e2_6a:  
+
+    b "I don’t know your circumstances, but I know it can be rough sometimes. You really should talk to your parents, they’re probably worried sick."
+   
+    jump e3_0
+
+    label e2_6b:
+
+    b "With a f*cking mouth like that, I wouldn’t put up with you either."
+    
+    b "We’re going down to the station and calling your parents, if they don’t come pick you up, you’re spending the night in solitary, for your protection."
+
     jump e3_0
 
     label e2_1b:
