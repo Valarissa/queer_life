@@ -158,15 +158,15 @@ label start:
 
     # Choice 1.2
     menu:
-        "I am... gay":
+        "I am... gay.":
             $ sexuality = 'gay'
             jump e1_2done
 
-        "I am... trans":
+        "I am... trans.":
             $ sexuality = 'trans'
             jump e1_2done
 
-        "I am... bi":
+        "I am... bi.":
             $ sexuality = 'bi'
             jump e1_2done
 
@@ -177,19 +177,19 @@ label start:
     if sexuality == 'gay' or sexuality == 'bi':
         # Choice 1.2a/c
         menu:
-            "I like boys":
+            "I like boys.":
                 $ gender = 'm'
                 jump e1_3done
-            "I like girls":
+            "I like girls.":
                 $ gender = 'f'
                 jump e1_3done
     elif sexuality == 'trans':
         # Choice 1.2b
         menu:
-            "I’m actually your daughter, not your son":
+            "I’m actually your daughter, not your son.":
                 $ gender = 'f'
                 jump e1_3done
-            "I’m actually your son, not your daughter":
+            "I’m actually your son, not your daughter.":
                 $ gender = 'm'
                 jump e1_3done
             "I’m not your son... I don’t really feel like a boy or girl.":
@@ -301,23 +301,23 @@ label start:
 
     pause 1
 
-    m "uh… I’m so tired… I just want to sleep, but where can I go?"
+    m "Uh… I’m so tired… I just want to sleep, but where can I go?"
 
     pause 1
 
     menu:
-        "Find a bench to sleep on in the park":
+        "Find a bench to sleep on in the park.":
             jump e2_1a
-        "Call a friend":
+        "Call a friend.":
             jump e2_1b
-        "Look for the nearest homeless shelter":
+        "Look for the nearest homeless shelter.":
             jump e2_1c
-        "Call your older sibling who moved out":
+        "Call your older sibling who moved out.":
             jump e2_1d
    
     label e2_1a:
 
-    n "walking through the park, you find a bench. It doesn’t exactly look comfortable, but the thought of dealing with other people seems a bit too much right now. Laying down, you unpack some clothes to cover yourself to keep out the chill. You close your eyes and drift asleep."
+    n "Walking through the park, you find a bench. It doesn’t exactly look comfortable, but the thought of dealing with other people seems a bit too much right now. Laying down, you unpack some clothes to cover yourself to keep out the chill. You close your eyes and drift asleep."
     
     show unknown
 
@@ -329,7 +329,7 @@ label start:
             jump e2_2
         "(Stand up)":
             jump e2_2
-        "Hrnnngh… go away":
+        "Hrnnngh… go away.":
             jump e2_2
         "What? What’s going on?":
             jump e2_2
@@ -358,7 +358,7 @@ label start:
 
     label e2_1d:
 
-    n "Your sibling picks you up and drives you to their place"
+    n "Your sibling picks you up and drives you to their place."
 
     jump e3_0
 
