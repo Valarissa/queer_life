@@ -26,6 +26,7 @@ image unknown = "images/unknown.png"
 image bg street = "images/outside.png"
 image bg outside = "images/house.png"
 image bg inside = "images/inside.png"
+image bg jail = "images/Jail.png"
 image bad man = "images/bad man.png"
 
 # Declare characters used by this game.
@@ -389,7 +390,7 @@ label start:
         $ grabs = "snatches"
         $ mood = " angrily"
 
-    n "The officer [grabs] your ID, looking over it[mood]. He eyes you up and down."
+    n "The officer [grabs] your ID, looking over it [mood]. He eyes you up and down."
 
     b "You a runaway?"
 
@@ -439,6 +440,8 @@ label start:
     label ep2_7:
 
     m "..."
+
+    scene bg jail
 
     n "Eventually you drift off to sleep. You’re awoken by the click of the key in the lock and the sounds of the door being opened"
 
