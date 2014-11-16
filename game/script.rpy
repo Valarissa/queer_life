@@ -19,15 +19,15 @@ label start:
     
     menu:
         "It's Mom":
-            $p = Character('Mom', color="#ff007f")
+            $ p = Character('Mom', color="#ff007f")
             jump talk
         
         "It's Dad":
-            $p = Character('Dad', color="#3333ff")
+            $ p = Character('Dad', color="#3333ff")
             jump talk
 
         "It's a hentai game.":
-            $p = Character('Hentai Game-', color="#3333ff")
+            $ p = Character('Hentai Game-', color="#3333ff")
             jump talk
          
     label talk:
@@ -87,50 +87,50 @@ label start:
     
     menu:
         "I am gay":
-            $sexuality = 'gay'
+            $ sexuality = 'gay'
             jump e1_2done
 
         "I am trans":
-            $sexuality = 'trans'
+            $ sexuality = 'trans'
             jump e1_2done
 
         "I am bi":
-            $sexuality = 'bi'
+            $ sexuality = 'bi'
             jump e1_2done
             
     label e1_2done:
         
     p "I… I’m not sure I understand."
         
-    if $sexuality == 'gay' or $sexuality == 'bi':
+    if sexuality == 'gay' or sexuality == 'bi':
         menu:
             "I like boys":
-                $gender = 'm'
+                $ gender = 'm'
                 jump e1_3done
             "I like girls":
-                $gender = 'f'
+                $ gender = 'f'
                 jump e1_3done
-    elif $sexuality == 'trans':
+    elif sexuality == 'trans':
         menu:
             "I’m actually your daughter, not your son":
-                $gender = 'f'
+                $ gender = 'f'
                 jump e1_3done
             "I’m actually your son, not your daughter":
-                $gender = 'm'
+                $ gender = 'm'
                 jump e1_3done
             "I’m not your son... I don’t really feel like a boy or girl.":
-                $gender = 'tf'
+                $ gender = 'tf'
                 jump e1_3done
             "I’m not your daughter... I don’t really feel like a boy or girl.":
-                $gender = 'ts'
+                $ gender = 'ts'
                 jump e1_3done
                 
     label e1_3done:
     p ".. I.. I see..."
     
-    if p[0] == 'Mom':
+    if p.name == 'Mom':
         "Please don’t tell dad."
-    elif p[0] == 'Dad':
+    elif p.name == 'Dad':
         "Please don’t tell mom."
     else:
         "Please don't tell our hentai parents"
