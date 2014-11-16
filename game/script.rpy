@@ -11,6 +11,9 @@ init python:
 image splash e1 = "images/title1.png"
 image splash e2 = "images/title2.png"
 image splash e3 = "images/title3.png"
+image splash end = "images/title4.png"
+image splash credit = "images/title5.png"
+
 image bg bedroom = "images/bedroom.png"
 image mom none = "images/mom-n.png"
 image mom happy = "images/mom-h.png"
@@ -443,11 +446,11 @@ label start:
 
     label e3_0:
 
+    play sound "sound/tick.mp3" fadein 2
+
     n "You’re left in the room, your only companion the receptionist behind a plate of bulletproof glass. (** She still stares at you disapprovingly when she thinks you aren’t looking)"
 
     n "A ticking clock provides a constant noise, punctuated by the clacking of the receptionists keyboard, occasional doors closing, and footsteps in distant hallways. The thought of the officer calling your parents is a grim reminder of how much more likely your parents are to blow up at you now."
-
-    play sound "sound/tick.mp3" fadein 2
 
     n "Being queer is bad enough, but now you’re already getting in trouble with police because of it!” Their condemning voice(s) run through your mind in a downward spiral as someone comes into the room."
 
@@ -587,12 +590,20 @@ label start:
 
     label end:
 
-    scene fadein 5
-    
-    "Fin"
+    window hide
 
-    stop music fadeout 7
+    scene splash end
 
-    pause 10
+    with Fade(2, 2, 2)
+
+    stop music fadeout 10
+
+    pause 5
+
+    scene splash end
+
+    with Fade(2, 1, 2)
+
+    pause 15
 
     return
