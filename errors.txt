@@ -1,0 +1,21 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 89: expected 'name' not found.
+    jump 1_2done
+         ^
+
+File "game/script.rpy", line 93: expected 'name' not found.
+    jump 1_2done
+         ^
+
+File "game/script.rpy", line 97: expected 'name' not found.
+    jump 1_2done
+         ^
+
+File "game/script.rpy", line 99: expected 'name' not found.
+    label 1_2done:
+          ^
+
+Ren'Py Version: Ren'Py 6.18.3.761

@@ -1,0 +1,23 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 105, in script
+    if $sexuality == 'gay' or $sexuality == 'bi':
+SyntaxError: invalid syntax (script.rpy, line 105)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 105, in script
+    if $sexuality == 'gay' or $sexuality == 'bi':
+  File "/Users/manduodong/Downloads/renpy-6.18.3-sdk/renpy/ast.py", line 1587, in execute
+    if renpy.python.py_eval(condition):
+  File "/Users/manduodong/Downloads/renpy-6.18.3-sdk/renpy/python.py", line 1416, in py_eval
+    return eval(py_compile(source, 'eval'), globals, locals)
+  File "/Users/manduodong/Downloads/renpy-6.18.3-sdk/renpy/python.py", line 477, in py_compile
+    raise e
+SyntaxError: invalid syntax (script.rpy, line 105)
+
+Darwin-14.0.0-x86_64-i386-64bit
+Ren'Py 6.18.3.761
+Queer Life 0.0
