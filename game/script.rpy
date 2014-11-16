@@ -10,6 +10,7 @@ init python:
 # eg. image eileen happy = "eileen_happy.png"
 image splash e1 = "images/title1.png"
 image splash e2 = "images/title2.png"
+image splash e3 = "images/title3.png"
 image bg bedroom = "images/bedroom.png"
 image mom none = "images/mom-n.png"
 image mom happy = "images/mom-h.png"
@@ -26,6 +27,7 @@ image bad man = "images/bad man.png"
 define m = Character('Me', color="#c8ffc8")
 define p = Character('???', color="#000000")
 define n = Character('Narrative', color="#f0f0f0")
+define o = Character('???', color="#000000")
 define gender = 'x'
 define sexuality = 'x'
 
@@ -65,14 +67,17 @@ label start:
     menu:
         "It's Mom.":
             $ p = Character('Mom', color="#ff007f")
+            $ o = Character('Dad', color="#ff007f")
             jump talk
 
         "It's Dad.":
             $ p = Character('Dad', color="#3333ff")
+            $ o = Character('Mom', color="#ff007f")
             jump talk
 
         "It's your sibling.":
             $ p = Character('Sibling', color="#3333ff")
+            $ o = Character('Mom', color="#ff007f")
             jump talk
 
     label talk:
@@ -357,5 +362,10 @@ label start:
     label end_game:
 
     n "You have no idea what is going on."
+
+
+    # Charpter 3
+
+
 
     return
