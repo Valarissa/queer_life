@@ -21,6 +21,8 @@ image dad happy = "images/dad-h.png"
 image dad mad = "images/dad-m.png"
 image unknown = "images/unknown.png"
 image bg street = "images/outside.png"
+image bg outside = "images/house.png"
+image bg inside = "images/inside.png"
 image bad man = "images/bad man.png"
 
 # Declare characters used by this game.
@@ -253,9 +255,7 @@ label start:
 
     play sound "sound/door_close.mp3"
 
-    $ left = p.name + " left."
-
-    "[left]"
+    "[p.name] left.]"
 
     pause 2
 
@@ -372,6 +372,8 @@ label start:
     # Episode III
     label e3_0:
 
+    stop music fadeout 3
+
     pause 2
 
     window hide
@@ -386,7 +388,13 @@ label start:
 
     pause 4
 
+    scene bg outside
+
+    with Fade(2, 2, 2)
+
     window show
+
+    play music "music/newStart.mp3" fadein 3
 
     $ ep3conv0 = "The car ride feels like an eternity, your " + p.name  + " barely looks at you the entire way. They occasionally sigh, and shake their head. The first words they say are as you pull up to your house"
 
@@ -413,6 +421,8 @@ label start:
     $ ep3conv3 = "You open the door slowly, you hear chairs being pushed and hurried footsteps in adjacent room. Your " + other_parent + " rush forward and hug you tight, then hold your shoulders at arms length so they can stare at you."
 
     n "[ep3conv3]"
+
+    scene bg inside
 
     if p.name == 'Mom':
         show dad mad
@@ -486,8 +496,12 @@ label start:
 
     label end:
 
-    scene fadeout 2
+    scene fadein 5
     
     "Fin"
+
+    stop music fadeout 7
+
+    pause 10
 
     return
